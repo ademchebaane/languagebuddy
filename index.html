@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#171326">
+  <meta name="description" content="LanguageBuddy — daily HSK vocabulary, example sentences, mini conversations and smart review.">
+  <title>LanguageBuddy</title>
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="vocab.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#today" aria-label="LanguageBuddy home">
+        <span class="brand-icon">語</span>
+        <span><strong>LanguageBuddy</strong><small>HSK DAILY LEARNING</small></span>
+      </a>
+      <div class="topbar-right">
+        <span class="streak-pill" title="Study streak">🔥 <b id="streakCount">0</b></span>
+        <button class="icon-button" id="settingsButton" aria-label="Open settings">⚙</button>
+      </div>
+    </header>
+
+    <main id="mainContent" class="main-content" aria-live="polite">
+      <section class="loading-panel">
+        <div class="loader"></div>
+        <h1>Preparing your Chinese lesson…</h1>
+        <p>Loading your HSK vocabulary.</p>
+      </section>
+    </main>
+
+    <nav class="bottom-nav" aria-label="Main navigation">
+      <button class="nav-item active" data-tab="today"><span>☀</span><small>Today</small></button>
+      <button class="nav-item" data-tab="words"><span>字</span><small>Words</small></button>
+      <button class="nav-item" data-tab="review"><span>↻</span><small>Review</small><i id="reviewDot" class="nav-dot hidden"></i></button>
+      <button class="nav-item" data-tab="practice"><span>✎</span><small>Practice</small></button>
+      <button class="nav-item" data-tab="progress"><span>▥</span><small>Progress</small></button>
+    </nav>
+  </div>
+
+  <div id="modalRoot"></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
